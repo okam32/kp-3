@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AD41B63-4597-4574-A97E-9DEABE0A837D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kp</RootNamespace>
+    <AssemblyName>kp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903230202545_InitialCreate.cs" />
+    <Compile Include="Migrations\201903230202545_InitialCreate.Designer.cs">
+      <DependentUpon>201903230202545_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903240046565_addadres.cs" />
+    <Compile Include="Migrations\201903240046565_addadres.Designer.cs">
+      <DependentUpon>201903240046565_addadres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903240049501_addpostalcode.cs" />
+    <Compile Include="Migrations\201903240049501_addpostalcode.Designer.cs">
+      <DependentUpon>201903240049501_addpostalcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\panda.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-rtl.min.css" />
+    <Content Include="css\classy-nav.min.css" />
+    <Content Include="css\core-style.css" />
+    <Content Include="css\font-awesome-4.4.0.ننن\css\font-awesome.css" />
+    <Content Include="css\font-awesome-4.4.0.ننن\css\font-awesome.min.css" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\font-awesome-4.4.0.ننن\HELP-US-OUT.txt" />
+    <Content Include="css\fonts\Yekan.svg" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\mystyles.css" />
+    <Content Include="css\panel-styles.css" />
+    <Content Include="css\respons.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\android_app_bg.png" />
+    <Content Include="img\avatar.jpeg" />
+    <Content Include="img\bg.png" />
+    <Content Include="img\contantbox2\ico-usp-1.png" />
+    <Content Include="img\contantbox2\ico-usp-2.png" />
+    <Content Include="img\contantbox2\ico-usp-3.png" />
+    <Content Include="img\contantbox2\ico-usp-4.png" />
+    <Content Include="img\contantbox2\ico-usp-5.png" />
+    <Content Include="img\img sid left\20df532b-a595-401d-bd32-0751baab3646.jpg" />
+    <Content Include="img\img sid left\3271bc27-3169-4b58-9398-61429c72159f.jpg" />
+    <Content Include="img\img sid left\89c06e5f-3fc1-4f1e-a58f-81c25e019519.jpg" />
+    <Content Include="img\img sid\0838f7b4-61e5-4140-a88d-8e37c16d9606.jpg" />
+    <Content Include="img\img sid\10a34967-2411-42f8-885b-2badc88a7624.jpg" />
+    <Content Include="img\img sid\3260d8b3-41d9-47e6-9cbd-795b74fc8361.jpg" />
+    <Content Include="img\img sid\3a8427dc-fba9-4639-bf91-1ff03bf05365.jpg" />
+    <Content Include="img\img sid\7a211f74-3941-486d-a652-d2c37af09039.jpg" />
+    <Content Include="img\img sid\93e0efcd-f2b2-4905-a6c7-53811ef0c3f9.jpg" />
+    <Content Include="img\img sid\ba89e757-d96d-4449-abc0-4816f8f52721.jpg" />
+    <Content Include="img\img sid\f3773853-d582-4f67-bd9c-b8800e31c091.jpg" />
+    <Content Include="img\ios_app_bg.png" />
+    <Content Include="img\logo-yalda.png" />
+    <Content Include="img\namad2.png" />
+    <Content Include="img\no-user.jpg" />
+    <Content Include="img\search.png" />
+    <Content Include="img\search_h.png" />
+    <Content Include="img\sidnews\auydwkqyw3h24dgpv7sx-90x60.jpg" />
+    <Content Include="img\sidnews\happy-bad-day2-90x60.jpg" />
+    <Content Include="img\sidnews\huawei-90x60.jpg" />
+    <Content Include="img\sidnews\iphone_6s_1-90x60.jpg" />
+    <Content Include="img\sidnews\memorable-picture-90x60.jpg" />
+    <Content Include="img\sidnews\MGS4-90x60.jpg" />
+    <Content Include="img\sidnews\Pollution_822-90x60.jpg" />
+    <Content Include="img\sidnews\Xbox-One-90x60.jpg" />
+    <Content Include="img\slid4\available-badge-small.png" />
+    <Content Include="img\slid4\Coffee-Maker-Hardstone-CM240129a094.jpg" />
+    <Content Include="img\slid4\Computer-HDD-Silicon-Armor-A80-1TB030b68.jpg" />
+    <Content Include="img\slid4\Hair-Trimmer-Panasonic-ES-SL41b60f82.jpg" />
+    <Content Include="img\slid4\Heater-Pars-Khazar-FH2000P3d52e1.jpg" />
+    <Content Include="img\slid4\Mobile-HTC-One-M85bcb35.jpg" />
+    <Content Include="img\slid4\Mobile-Samsung-Galaxy-S-Duos-2-S7582acef5f.jpg" />
+    <Content Include="img\slid4\Mobile-Samsung-Galaxy-S3-I9300I-Dual-SIM0102e8.jpg" />
+    <Content Include="img\slid4\Music-Album-Ava-Khorshid-Morteza-Ahmadi-Sedaye-Tehrun-e-Ghadim-3fc3024.jpg" />
+    <Content Include="img\slid4\Music-Pouya-Hajili-Reflection-Dream7e0daf.jpg" />
+    <Content Include="img\slid4\Tablet-Lenovo-IdeaTab-A3000-Dual-SIM-3G-16GBb541c0.jpg" />
+    <Content Include="img\slid4\Tablet-Samsung-Galaxy-Note-101-2014-Edition-3G-16GB68dc20.jpg" />
+    <Content Include="img\slider3\0347b51f-5380-49ef-93e4-294eb8061897.jpg" />
+    <Content Include="img\slider3\0897c88d-3560-4f97-8e49-67c5a7a1be88.jpg" />
+    <Content Include="img\slider3\212a2d8c-5e09-407a-8c68-f79492c54100.jpg" />
+    <Content Include="img\slider3\2a7c5233-4e7f-40e9-881b-f7322691eb63.jpg" />
+    <Content Include="img\slider3\40d218e4-6e85-4e4d-88e0-814a253c6780.jpg" />
+    <Content Include="img\slider3\8f116b82-359e-4a74-b84d-3a92abaaa59a.jpg" />
+    <Content Include="img\slider\73416ac7-4cdb-46e5-98b8-a4e9d0199388.jpg" />
+    <Content Include="img\slider\93987add-50f4-41fc-b1ea-f8e2481c4de4.jpg" />
+    <Content Include="img\slider\a1487561-a6bd-4f6e-a7ac-90ae2af20872.jpg" />
+    <Content Include="img\slider\c483f4fc-fbea-421a-9fe6-d6a3c2e65aeb.jpg" />
+    <Content Include="img\slider\de3fc8a1-4a04-4cbd-b3e5-51ee8c45f524.jpg" />
+    <Content Include="img\zoom-ico.png" />
+    <Content Include="js\active.js" />
+    <Content Include="js\all.js" />
+    <Content Include="js\classy-nav.min.js" />
+    <Content Include="js\code.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\panel-script.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\font-awesome-4.4.0.ننن\fonts\FontAwesome.otf" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\animated.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\bordered-pulled.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\core.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\fixed-width.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\font-awesome.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\icons.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\larger.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\list.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\mixins.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\path.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\rotated-flipped.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\stacked.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\less\variables.less" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\font-awesome.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_animated.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_bordered-pulled.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_core.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_fixed-width.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_icons.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_larger.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_list.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_mixins.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_path.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_rotated-flipped.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_stacked.scss" />
+    <Content Include="css\font-awesome-4.4.0.ننن\scss\_variables.scss" />
+    <Content Include="css\fonts\Droid Arabic Kufi.woff" />
+    <Content Include="css\fonts\Droid_Arabic_Kufi.eot" />
+    <Content Include="css\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\fonts\fontawesome-webfont.eot%40" />
+    <Content Include="css\fonts\Yekan.eot" />
+    <Content Include="css\fonts\Yekan.ttf" />
+    <Content Include="css\fonts\Yekan.woff" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\PopUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903230202545_InitialCreate.resx">
+      <DependentUpon>201903230202545_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903240046565_addadres.resx">
+      <DependentUpon>201903240046565_addadres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903240049501_addpostalcode.resx">
+      <DependentUpon>201903240049501_addpostalcode.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51023</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51023/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

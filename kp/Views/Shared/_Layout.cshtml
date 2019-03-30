@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - فروشگاه کالای پزشکی</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/css/bootstrap-rtl.min.css" rel="stylesheet" />
+
+
+
+    <link rel="shortcut icon" href="images/content/favicon.ico" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="title" content=" " />
+    <meta name="description" content="" />
+    <title>فروشگاه دیجی کالا</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="~/css/respons.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/core-style.css" rel="stylesheet" />
+    <link href="~/css/classy-nav.min.css" rel="stylesheet" />
+    <link href="~/css/core-style.css" rel="stylesheet" />
+
+    @*<link href="~/css/panel-styles.css" rel="stylesheet" />*@
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slide1 img:gt(0)').hide();
+            setInterval(function () {
+                $('.slide1 :first-child').fadeOut(2000).next('img').fadeIn(1500).end().appendTo('.slide1');
+            }, 5000);
+        });
+        $(document).ready(function () {
+            $('.slide2 img:gt(0)').hide();
+            setInterval(function () {
+                $('.slide2 :first-child').fadeOut(0).next('img').fadeIn(1000).end().appendTo('.slide2');
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="header wow slideInDown col-md-12 col-sm-12 col-xs-12" data-wow-delay="0.1s" data-wow-duration="1s">
+            @{
+                if (Session["userId"] == null)
+                {
+
+                    <div class="divcont1 wow slideInDown col-sm-12 col-xs-12" data-wow-delay="0.1s" data-wow-duration="1s">
+                        <a class="col-sm-8 col-xs-8" href="@Url.Action("Login","Users")">  <i class="fa fa-unlock-alt" style="font-size:16px"></i> &nbsp; سلام، به حساب کاربری خود وارد شوید   </a>
+                        <a class="col-sm-3 col-xs-3" href="@Url.Action("Create","Users")"> <i class="fa fa-user" style="font-size:16px"></i> &nbsp; ثبت نام کنید  </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="divcont1 wow slideInDown col-sm-offset-4 col-xs-offset-4" data-wow-delay="0.1s" data-wow-duration="1s">
+                        <a class="col-sm-8 col-xs-8" href="@Url.Action("Panel","Users")">  <i class="fas fa-calendar-check" style="font-size:18px"></i> &nbsp; @Session["username"]&nbsp;عزیز خوش آمدین</a>
+                        <a class="col-sm-3 col-xs-3" href="@Url.Action("Logout","Users")"> <i class="fas fa-door-open" style="font-size:18px"></i> &nbsp; خروج  </a>
+                    </div>
+                }
+            }
+            <div class="row">
+                <div class="divvoxgre wow slideInDown  hidden-sm hidden-xs" data-wow-delay="0.5s" data-wow-duration="1s">
+                    <div class="divvoxgre1"><i class="fa fa-cart-plus"></i></div>
+                    <a href="index.html"> سبد خرید</a>
+                    <a href="#" class="divvoxgrecir">0</a>
+                </div>
+
+                <div class="divserach wow slideInDown col-md-3 hidden-sm hidden-xs" data-wow-delay="0.6s" data-wow-duration="1s">
+                    <div class="h_search">
+                        <input id="textsearch" type="text" value="محصول , دسته یا برند مورد نظرتان را جست جو کنید..." onfocus=" this.style.color='#f2f2f2';" onkeydown="if (this.value=='محصول , دسته یا برند مورد نظرتان را جست جو کنید...') this.value=''; this.style.color='#808080';" onblur="if (this.value=='') this.value='    چی شد  یادت  رفت . . . ؟';this.style.color='#3CC395';" />
+                        <input id="sendsearch" type="submit" value="" />
+                    </div>
+                </div>
+            </div>
+            <!--logo-->
+            <div class="logo wow slideInDown hidden-sm hidden-xs" data-wow-delay="0.8s" data-wow-duration="1s"></div>
+            <!--end logo-->
+            <div class="row">
+                <!--logo in sm & xs-->
+                <div class="logo2 wow slideInDown hidden-md hidden-lg col-sm-12 col-xs-12" data-wow-delay="0.8s" data-wow-duration="1s"></div>
+                <!--end logo in sm & xs-->
+            </div>
+            <div class="row">
+                <!--shopping cart in sm & xs-->
+                <div class="wrap2 hidden-md hidden-lg col-sm-3 col-xs-3">
+                    <a href="#"><div class="divvoxgre1"><i class="fa fa-cart-plus"></i></div></a>
+                </div>
+                <!--end shopping cart sm & xs-->
+                <!--search sm & xs-->
+                <div class="wrap hidden-md hidden-lg col-sm-9 col-xs-9">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="جست و جو">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <!--end search sm & xs-->
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- ##### Header Area Start ##### -->
+    <div class="header-nav ">
+        <div class="row">
+            <div class="classy-nav-container breakpoint-off container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar" id="essenceNav">
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+                    <!-- Menu -->
+                    <!--close btn-->
+                    <div class="classy-menu">
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav ">
+                            <ul>
+                                <li>
+                                    <a class="nav-container" href="#">تجهیزات پزشگی </a>
+                                    <div class="megamenu">
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Women's Collection</li>
+                                            <li><a href="shop.html">Dresses</a></li>
+                                            <li><a href="shop.html">Blouses &amp; Shirts</a></li>
+                                            <li><a href="shop.html">T-shirts</a></li>
+                                            <li><a href="shop.html">Rompers</a></li>
+                                            <li><a href="shop.html">Bras &amp; Panties</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Men's Collection</li>
+                                            <li><a href="shop.html">T-Shirts</a></li>
+                                            <li><a href="shop.html">Polo</a></li>
+                                            <li><a href="shop.html">Shirts</a></li>
+                                            <li><a href="shop.html">Jackets</a></li>
+                                            <li><a href="shop.html">Trench</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Kid's Collection</li>
+                                            <li><a href="shop.html">Dresses</a></li>
+                                            <li><a href="shop.html">Shirts</a></li>
+                                            <li><a href="shop.html">T-shirts</a></li>
+                                            <li><a href="shop.html">Jackets</a></li>
+                                            <li><a href="shop.html">Trench</a></li>
+                                        </ul>
+                                        <div class="single-mega cn-col-4">
+                                            <img src="~/img/img sid/10a34967-2411-42f8-885b-2badc88a7624.jpg" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="nav-container" href="#">تحهیزات حرفه ای</a>
+                                    <div class="megamenu">
+                                        <div class="single-mega cn-col-4">
+                                            <img src="~/img/img sid/7a211f74-3941-486d-a652-d2c37af09039.jpg" />
+                                        </div>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Women's Collection</li>
+                                            <li><a href="shop.html">Dresses</a></li>
+                                            <li><a href="shop.html">Blouses &amp; Shirts</a></li>
+                                            <li><a href="shop.html">T-shirts</a></li>
+                                            <li><a href="shop.html">Rompers</a></li>
+                                            <li><a href="shop.html">Bras &amp; Panties</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Men's Collection</li>
+                                            <li><a href="shop.html">T-Shirts</a></li>
+                                            <li><a href="shop.html">Polo</a></li>
+                                            <li><a href="shop.html">Shirts</a></li>
+                                            <li><a href="shop.html">Jackets</a></li>
+                                            <li><a href="shop.html">Trench</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li class="title">Kid's Collection</li>
+                                            <li><a href="shop.html">Dresses</a></li>
+                                            <li><a href="shop.html">Shirts</a></li>
+                                            <li><a href="shop.html">T-shirts</a></li>
+                                            <li><a href="shop.html">Jackets</a></li>
+                                            <li><a href="shop.html">Trench</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+
+                                <li><a class="nav-container" href="blog.html">وبلاگ</a></li>
+                                <li><a class="nav-container" href="contact.html">تماس با ما</a></li>
+
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <!--first row-->
+        <div class="blocbox wow slideInDown col-sm-12 col-xs-12" data-wow-delay="0.1s" data-wow-duration="1s">
+            <div class="blocboxdiv">
+                <div class="col-sm-12 col-xs-12 floatleftbox ">
+                    info@digikala.com &nbsp; <i class="fa fa-at"></i>&nbsp;&nbsp;&nbsp;
+                    سوالات متداول  &nbsp;<i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;&nbsp;
+                    ۹٥۱۱۹۰۹٥ - ۰۲۱  &nbsp; <i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class=" col-sm-12 col-xs-12 floatrightbox">
+                    ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم.
+                </div>
+            </div>
+        </div>
+        <!--end first row-->
+        <!--second row-->
+        <div class="blocbox f7f8fabox wow slideInDown " data-wow-delay="0.1s" data-wow-duration="1s">
+            <div class="blocboxdiv wow slideInDown" data-wow-delay="0.1s" data-wow-duration="1s">
+                <div class="subscribe-bar-menu clearfix ">
+                    <!--right col-->
+                    <div class="menu-right col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <h3 class="title">راهنمای خرید از دیجی&zwnj;کالا</h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" title="ثبت سفارش" href="/Page/How-To-Order">ثبت سفارش</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="رویه های ارسال سفارش" href="/Page/Delivery">رویه های ارسال سفارش</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="شیوه های پرداخت" href="/Page/Payment-terms">شیوه های پرداخت</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="معرفی دیجی بن" href="/Page/Digibon">معرفی دیجی بن</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end right col-->
+                    <!--center col-->
+                    <div class="menu-left col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                        <h3 class="title">خدمات مشتریان</h3>
+                        <ul>
+                            <li>
+                                <a target="_blank" title="پاسخ به پرسش های متداول" href="/Page/FAQ">پاسخ به پرسش های متداول</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="رویه های باز گرداندن کالا" href="/Page/Return-Policy">رویه های باز گرداندن کالا</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="شرایط استفاده" href="/Page/Terms-Conditions">شرایط استفاده</a>
+                            </li>
+                            <li>
+                                <a target="_blank" title="حریم خصوصی" href="/Page/Privacy-Policy">حریم خصوصی</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end center col-->
+                    <!--left col-->
+                    <div class="subscribe-bar-form col-md-3 col-lg-3  col-sm-12 col-xs-12">
+                        <h2 class="title">اولین نفری که مطلع می شود، باشید!</h2>
+                        <div id="subscribe-form">
+                            <div class="form-groups clearfix">
+                                <input type="text" name="subscribe-email" id="subscribe-emial" placeholder="آدرس ایمیل خود را وارد کنید">
+                                <div class="dk-button-container">
+                                    <a class="dk-button blue dk-validateSubscribeEmail" onclick="validateSubscribeEmail()" style="cursor:pointer">
+                                        <div class="dk-button-label clearfix">
+                                            <div class="dk-button-labelname">تایید ایمیل</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-panel clearfix">
+                            <a href="http://www.facebook.com/DigikalaPortal" class="boxsosh" style="background-color:#ff006e"><i class="fa fa-google-plus"></i></a>
+                            <a href="http://www.twitter.com/Digikalacom" class="boxsosh" style="background-color:#0026ff"><i class="fa fa-facebook"></i></a>
+                            <a href="https://plus.google.com/107060095312678131486/posts" class="boxsosh" style="background-color:#ff6a00"><i class="fa fa-instagram"></i></a>
+                            <a href="http://www.instagram.com/digikalacom" class="boxsosh" style="background-color:#0094ff"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <!--end left col-->
+                </div>
+
+            </div>
+        </div>
+        <!--end second row-->
+        <!--third row-->
+        <div class="blocbox fffabox wow slideInDown hidden-sm hidden-xs" data-wow-delay="0.1s" data-wow-duration="1s">
+            <div class="blocboxdiv" style="margin-top:27px">
+                <!--first col-->
+                <div class="box">
+                    <h3 class="title">کالای دیجیتال</h3>
+                    <ul>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Mobile/" title="موبایل" target="_blank">موبایل</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Tablet-EBook-Reader/" title="تبلت و کتابخوان"
+                               target="_blank">تبلت و کتابخوان</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Laptop/" title="لپتاپ" target="_blank">لپتاپ</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Camera/" title="دوربین" target="_blank">دوربین</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Computer-Parts/" title="کامپیوتر و تجهیزات جانبی"
+                               target="_blank">کامپیوتر و تجهیزات جانبی</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Office-Machines/" title="ماشین های اداری" target="_blank">
+                                ماشین های اداری
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Video-Audio-Entertainment/" title="صوتی و تصویری"
+                               target="_blank">صوتی و تصویری</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Electronic-Devices/Accessories-Main/" title="لوازم جانبی کالای دیجیتال"
+                               target="_blank">لوازم جانبی کالای دیجیتال</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end first col-->
+                <!--second col-->
+                <div class="box">
+                    <h3 class="title">لوازم خانگی</h3>
+                    <ul>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Video-Audio-Entertainment/" title="صوتی و تصویری"
+                               target="_blank">صوتی و تصویری</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Home-Appliance/" title="لوازم خانگی برقی" target="_blank">
+                                لوازم خانگی برقی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Home-kitchen-Appliances/" title="آشپزخانه" target="_blank">
+                                آشپزخانه
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Serving/" title="سرو و پذیرایی" target="_blank">
+                                سرو و پذیرایی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Decorative/" title="دکوراتیو" target="_blank">دکوراتیو</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/BedandBath/" title="خواب و حمام" target="_blank">
+                                خواب و حمام
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Cleaning/" title="شستشو و نظافت" target="_blank">
+                                شستشو و نظافت
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Home-and-Kitchen/Tools/" title="ابزار" target="_blank">ابزار</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end second col-->
+                <!--third col-->
+                <div class="box">
+                    <h3 class="title">زیبایی و سلامتی</h3>
+                    <ul>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Perfume-All/" title="عطر" target="_blank">عطر</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Beauty/" title="لوازم آرایشی" target="_blank">
+                                لوازم آرایشی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Hair-Clipper/" title="لوازم بهداشتی" target="_blank">
+                                لوازم بهداشتی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Electrical-Personal-Care/" title="لوازم شخصی برقی"
+                               target="_blank">لوازم شخصی برقی</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Watch-Clock/" title="ساعت" target="_blank">ساعت</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Jewelery/" title="زیور آلات" target="_blank">
+                                زیور
+                                آلات
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Personal-Appliance/Health-Care/" title="ابزار سلامت" target="_blank">
+                                ابزار سلامت
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end third col-->
+                <!--fourth col-->
+                <div class="box">
+                    <h3 class="title">فرهنگ و هنر</h3>
+                    <ul>
+                        <li>
+                            <a href="/Main/Book-And-Media/Publication/" title="کتاب و مجلات" target="_blank">
+                                کتاب و مجلات
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Stationery-Main/" title="لوازم تحریر" target="_blank">
+                                لوازم تحریر
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Handicraft/" title="صنایع دستی" target="_blank">
+                                صنایع
+                                دستی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/MusicalInstruments/" title="ادوات موسیقی" target="_blank">
+                                ادوات موسیقی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Music-Audio-Content/" title="موسیقی" target="_blank">
+                                موسیقی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Film-Video-Content/" title="فیلم" target="_blank">
+                                فیلم
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Software-Games/" title="نرم افزار و بازی" target="_blank">
+                                نرم افزار و بازی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Book-And-Media/Multimedia-Training-Pack/" title="محتوای آموزشی"
+                               target="_blank">محتوای آموزشی</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end fourth col-->
+                <!--fifth col-->
+                <div class="box">
+                    <h3 class="title">ورزش و سرگرمی</h3>
+                    <ul>
+                        <li>
+                            <a href="/Main/Sport-Entertainment/Sport/" title="لوازم ورزشی" target="_blank">
+                                لوازم
+                                ورزشی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Sport-Entertainment/Toys/" title="اسباب بازی" target="_blank">
+                                اسباب
+                                بازی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Sport-Entertainment/Traveling-Equipment/" title="تجهیزات سفر"
+                               target="_blank">تجهیزات سفر</a>
+                        </li>
+                        <li>
+                            <a href="/Main/Sport-Entertainment/SportShoes/" title="کفش ورزشی" target="_blank">
+                                کفش ورزشی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Main/Sport-Entertainment/Sports-Wear/" title="پوشاک ورزشی" target="_blank">
+                                پوشاک ورزشی
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end fifth col-->
+
+            </div>
+        </div>
+        <!--end third row-->
+        <!--fourth row-->
+        <div class="blocbox wow slideInDown" data-wow-delay="0.1s" data-wow-duration="1s">
+            <div class="blocboxdiv">
+
+                <div class="floatrightbox">
+
+                    <a href="/Page/About-Digikala" title="درباره دیجی&zwnj;کالا" target="_blank">درباره دیجی&zwnj;کالا</a>
+                    <a href="/Page/Job-Opportunities" title=" فرصت&zwnj;های شغلی" target="_blank"> فرصت&zwnj;های شغلی</a>
+                    <a target="_blank" title="تماس با ما" href="/ContactUs">تماس با ما</a>
+
+                </div>
+                <div class="floatrightbox" style="width:100%;font-size:13px;color:#b4b4b4">
+                    استفاده از مطالب سايت دیجی‌کالا فقط برای مقاصد غیر تجاری و با ذکر منبع بلامانع است. کليه حقوق اين سايت متعلق به شرکت نوآوران فن آوازه (فروشگاه آنلاین دیجی‌کالا) می‌باشد.
+                    <div class="floatleftbox" style="width:300px;font-size:13px;color:#b4b4b4">
+
+                        Copyright  Digikala.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end fourth row-->
+    </footer>
+
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+    <script src="~/js/classy-nav.min.js"></script>
+    <script src="~/js/active.js"></script>
+    @*<script src="~/js/panel-script.js"></script>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
